@@ -1,0 +1,42 @@
+type Query
+{
+    IdentifierGraphql (
+        identifier: String @doc(description: "identifier")
+    ): CustomGraphqlOutput @resolver(class: "Casestudy\\Shopfinder\\Model\\Resolver\\CustomGraphql") @doc(description:" Datapassing")
+
+}
+
+type CustomGraphqlOutput
+{
+    shop_data: [ShopDetail]
+}
+type ShopDetail {
+    shop_name: String
+    identifier: String
+    country: String
+    image: String
+    longitude_latitude: String
+}
+
+
+type Mutation {
+    editShopData (
+        shopfinder_id: Int @doc(description: "shopfinder_id"),
+        shop_name: String @doc(description: "shop_name"),
+        identifier: String @doc(description: "identifier"),
+        country: String @doc(description: "country"),
+        image: String @doc(description: "image"),
+        longitude_latitude: String @doc(description: "longitude_latitude")
+    ):editShopDataOutput @resolver(class: "Casestudy\\Shopfinder\\Model\\Resolver\\EditShopData") @doc(description: "EditShopData")
+}
+type editShopDataOutput @doc(description: "EditShopData") {
+    shopfinder_id: String
+    shop_name: String
+    identifier: String
+    country: String
+    image: String
+    longitude_latitude: String
+}
+
+
+

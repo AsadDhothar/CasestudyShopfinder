@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+	<router id="admin">
+		<route frontName="casestudy_shopfinder" id="casestudy_shopfinder">
+			<module before="Magento_Backend" name="Casestudy_Shopfinder"/>
+		</route>
+	</router>
+</config>

@@ -1,0 +1,22 @@
+{
+    "name": "casestudy/module-shopfinder",
+    "description": "Shopfinder",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "asad",
+            "email": "asadu0765@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Casestudy\\Shopfinder\\": ""
+        }
+    }
+}

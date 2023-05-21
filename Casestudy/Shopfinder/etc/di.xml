@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Casestudy\Shopfinder\Api\ShopfinderRepositoryInterface" type="Casestudy\Shopfinder\Model\ShopfinderRepository"/>
+	<preference for="Casestudy\Shopfinder\Api\Data\ShopfinderInterface" type="Casestudy\Shopfinder\Model\Shopfinder"/>
+	<preference for="Casestudy\Shopfinder\Api\Data\ShopfinderSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Casestudy\Shopfinder\Model\ResourceModel\Shopfinder\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">casestudy_shopfinder_shopfinder</argument>
+			<argument name="resourceModel" xsi:type="string">Casestudy\Shopfinder\Model\ResourceModel\Shopfinder\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="casestudy_shopfinder_shopfinder_listing_data_source" xsi:type="string">Casestudy\Shopfinder\Model\ResourceModel\Shopfinder\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+    <type name="Vendor\Module\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">label/tmp/image</argument>
+            <argument name="basePath" xsi:type="string">label/image</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
